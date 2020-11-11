@@ -1,28 +1,26 @@
 import React from "react";
 import { ScrollView, ActivityIndicator, StyleSheet, Image, ImageBackground, View, Text } from "react-native";
-import UserList from "./user-list";
-import Header from './header';
-import sanityClient from './assets/client' 
-import BackButton from './back-button'
-import AppText from './assets/text'
-import AppActiveText from './assets/text-active'
-import AppInactiveText from './assets/text-inactive'
 import SearchBar from './search-bar'
+import SearchTabs from './search-tabs.js'
+import PhraseList from './phrase-list'
 
 class SearchPage extends React.Component {
-    constructor(props, user) {
+    constructor(props, data) {
         super(props);
         this.state = {
-            user: user,
-            tab: 'phrases'
+            user: this.props.data.user,
+            searchtab: 'phrases'
         }
-        console.log()
+        console.log(this.props.data)
+        console.log(this.state)
     }
 
   render() {
     return (
         <View>
             <SearchBar/>
+            <SearchTabs data={this.state}/>
+            <PhraseList data={this.state}/>
         </View>
     );
   }

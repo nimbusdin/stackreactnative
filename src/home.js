@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, ActivityIndicator, StyleSheet, Image, ImageBackground } from "react-native";
+import { ScrollView, ActivityIndicator, StyleSheet, Image, ImageBackground, View } from "react-native";
 import UserList from "./user-list";
 import Header from './header';
 import sanityClient from './assets/client' 
@@ -9,7 +9,7 @@ import User from './user'
 
 // const imageURI = Asset.fromModule(require('./arrow.png')).uri;
 
-const image = require('./assets/aoeu.jpg');
+// const image = require('./assets/aoeu.jpg');
 
 class Home extends React.Component {
   state = {
@@ -42,8 +42,8 @@ class Home extends React.Component {
         noSpacer={true}
         noScroll={true}
         style={styles.container}
-        showVerticalSCrollIndicator = {false}
-        showHorizontalScrollIndicator = {false}
+        showsVerticalSCrollIndicator = {false}
+        showsHorizontalScrollIndicator = {false}
       >
           {this.state.loading ? (
           <ActivityIndicator
@@ -52,17 +52,10 @@ class Home extends React.Component {
             size="large"
           />
         ) : (
-          <div>
+          <View>
             <Header title={this.state.user.name} />
-            <div id='image'>
-              <Image
-                source={require('./assets/aoeu.jpg')}
-                style={styles.image}
-              />
-            </div>
-            <User />
-            
-          </div>
+            <User data={this.state}/>
+          </View>
         )}
       </ScrollView>
     );
@@ -74,7 +67,7 @@ var styles = StyleSheet.create({
     backgroundColor: "white",
     width: '375px',
     height: '812px',
-    // top: '50px',
+    overflow: 'hidden',
   },
   centering: {
     alignItems: "center",

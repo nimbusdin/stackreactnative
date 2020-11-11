@@ -7,17 +7,18 @@ import BackButton from './back-button'
 import UserPage from './user-page'
 
 class User extends React.Component {
-    constructor(props, user) {
+    constructor(props, data) {
         super(props);
         this.state = {
-            user: user
-        }
+            user: this.props.data.user
+        };
+        console.log(this.props.data)
     }
 
   render() {
     return (
         <UserPage
-            user={this.state.user}
+            data={this.state}
         />
     );
   }

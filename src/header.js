@@ -7,13 +7,16 @@ import BackButton from './back-button'
 const Header = ({ onBack, title }) => (
   <SafeAreaView style={styles.headerContainer}>
     <View style={styles.header}>
+      <View style={styles.headerLeft}>
+        <BackButton/>  
+      </View>    
       <View style={styles.headerCenter}>
-        
         <AppHeaderText>
           {title}
         </AppHeaderText>
         {/* <Text accessibilityRole="heading" aria-level="3" style={styles.title}>{title}</Text> */}
       </View>
+      <View style={styles.headerRight}/>
     </View>
   </SafeAreaView>
 );
@@ -35,11 +38,13 @@ const styles = StyleSheet.create({
   },
   headerLeft: {
     order: 1,
-    width: 80
+    width: 54,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   headerRight: {
     order: 3,
-    width: 80
+    width: 54
   },
   // title: {
   //   // fontSize: 20,

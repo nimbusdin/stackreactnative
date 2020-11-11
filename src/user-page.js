@@ -8,52 +8,31 @@ import AppText from './assets/text'
 import AppActiveText from './assets/text-active'
 import AppInactiveText from './assets/text-inactive'
 import SearchPage from './search-page'
+import UserTabs from './user-tabs'
 
 class UserPage extends React.Component {
-    constructor(props, user) {
+    constructor(props, data) {
         super(props);
         this.state = {
-            user: user,
-            tab: 'search'
+            user: this.props.data.user,
+            usertab: 'search'
         }
-        console.log()
+        console.log(this.props.data)
     }
 
   render() {
     return (
-        <div>
-        {/* Display Tabs */}
-        <View style={styles.tabs}>
-            <View style={styles.leftMargin}/>
-            {this.state.tab === 'assigned' ? 
-                (<View style={[styles.assignedTab, styles.active]}>
-                    <AppActiveText><Text>ASSIGNED</Text></AppActiveText>
-                </View>) : 
-                (<View style={[styles.assignedTab, styles.inactive]}>
-                    <AppInactiveText><Text>ASSIGNED</Text></AppInactiveText>
-                </View>)
-            }
-            
-            <View style={styles.centerMargin}/>
-            {this.state.tab === 'search' ?
-                (<View style={[styles.searchTab, styles.active]}>
-                    <AppActiveText><Text>SEARCH</Text></AppActiveText>
-                </View>) :
-                (<View style={[styles.searchTab, styles.inactive]}>
-                    <AppInactiveText><Text>SEARCH</Text></AppInactiveText>
-                </View>)
-            }
-            <View style={styles.rightMargin}/>
-        </View>
-
-        {/* Display Selected Tab Content */}
+        
         <View>
-        {this.state.tab === 'assigned' ? 
-            (<View>            </View>) : 
-            (<SearchPage user={this.state.user}/>)
-        }
+            {/* Display Tabs */}
+            <UserTabs data={this.state}></UserTabs>
+        
+            {/* Display Selected Tab Content */}
+            {this.state.usertab === 'assigned' ? 
+                (<View>            </View>) : 
+                (<SearchPage data={this.state}/>)
+            }
         </View>
-        </div>
     );
   }
 }

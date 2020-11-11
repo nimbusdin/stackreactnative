@@ -8,12 +8,14 @@ class App extends React.Component {
   render() {
     return (
       // <NavigationContainer>
+      <View>
+        <link href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap' rel="stylesheet"/>
         <View style={styles.appContainer}>
         
           <Home style={styles.homeContainer}/>
         </View>
-      // </NavigationContainer>
-      
+      {/* // </NavigationContainer> */}
+      </View>
     );
   }
 }
