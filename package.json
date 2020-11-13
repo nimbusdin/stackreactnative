@@ -1,66 +1,30 @@
 {
-  "name": "mavenclient",
-  "version": "0.0.1",
-  "private": true,
+  "name": "m6client",
+  "version": "1.0.0",
+  "description": "M6 Web Client",
+  "main": "src/index.js",
   "scripts": {
-    "start-web": "react-scripts start",
-    "build-web": "react-scripts build",
-    "test-web": "react-scripts test",
-    "eject-web": "react-scripts eject",
-    "start-native": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "build:ios": "expo build:ios",
-    "build:android": "expo build:android"
+    "start": "webpack serve --config ./webpack.config.js --mode development"
   },
+  "author": "viaMaven",
+  "license": "ISC",
   "dependencies": {
-    "@react-native-community/checkbox": "^0.5.5",
-    "@react-native-community/masked-view": "^0.1.10",
-    "@react-navigation/native": "^5.8.6",
-    "@react-navigation/stack": "^5.12.3",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
     "@sanity/client": "^2.0.9",
-    "babel-plugin-module-resolver": "^4.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx-source": "^6.22.0",
-    "babel-preset-expo": "^8.3.0",
-    "expo": "^39.0.0",
-    "material-bread": "^0.2.10",
-    "modal-enhanced-react-native-web": "^0.2.0",
-    "react": "16.13.1",
-    "react-art": "^17.0.1",
+    "babel-loader": "^8.2.1",
+    "file-loader": "^6.2.0",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.0",
+    "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-native": "^0.63.3",
-    "react-native-check-box": "^2.1.7",
-    "react-native-gesture-handler": "^1.8.0",
-    "react-native-reanimated": "^1.13.1",
-    "react-native-safe-area-context": "^3.1.4",
-    "react-native-screens": "^2.13.0",
-    "react-native-svg": "^12.1.0",
-    "react-native-swipeable-lists": "^0.0.1",
-    "react-native-web": "^0.14.7",
-    "react-navigation": "^4.4.3"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/runtime": "^7.8.4",
-    "@react-native-community/eslint-config": "^1.1.0",
-    "metro-react-native-babel-preset": "^0.59.0",
-    "react-scripts": "^4.0.0",
-    "react-test-renderer": "16.13.1"
-  },
-  "jest": {
-    "preset": "react-native"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "react-native-web": "^0.14.8",
+    "react-native-web-image-loader": "^0.1.1",
+    "source-map-loader": "^1.1.2",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }
