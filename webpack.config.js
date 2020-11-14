@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   module: {
     rules: [
@@ -19,11 +20,6 @@ module.exports = {
             loader: "html-loader",
           },
         ],
-      },
-      {
-        test: /\.(js|jsx)$/,
-        enforce: 'pre',
-        use: ['source-map-loader'],
       },
       {
         test: /\.(png|jpe?g|gif)$/,

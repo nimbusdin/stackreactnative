@@ -1,34 +1,25 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import { Text, Image, View} from "react-native";
 
-import React from 'react';
-import { AppRegistry, StyleSheet, View } from 'react-native';
-import Home from './Home';
+const imgSrc = require('./arrow.png');
 
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
       <View>
-        <View style={styles.appContainer}>
-          <Home style={styles.homeContainer}/>
-        </View>
+        <Text>Hello World</Text>
+        <Image source={imgSrc} style={styles.image} />
+        <Image source={'https://randomuser.me/api/portraits/women/25.jpg'} style={styles.image} />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  appContainer: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    alignSelf: "center",
-  },
-  homeContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    alignSelf: "center"
+const styles = {
+  image: {
+    width: 24,
+    height: 24,
+    borderWidth: 1
   }
-});
-
-AppRegistry.registerComponent('App', () => App);
-
-export default App;
+}
